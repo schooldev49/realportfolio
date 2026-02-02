@@ -7,12 +7,12 @@ const Footer = () => {
           © {year} Aaron Yu — coded between sunrise runs, lab sprints, and tutoring sessions.
         </p>
         <div className="flex items-center gap-5 text-amber-200">
-          <a className="border-b border-transparent pb-0.5 hover:border-amber-300" href="mailto:hello@aaronyu.com">
+          <a className="border-b border-transparent pb-0.5 hover:border-amber-300" href="mailto:ay.aaron.yu@gmail.com">
             Email
           </a>
           <a
             className="border-b border-transparent pb-0.5 hover:border-amber-300"
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/aaron-yu-980873332/"
             target="_blank"
             rel="noreferrer"
           >
@@ -20,7 +20,7 @@ const Footer = () => {
           </a>
           <a
             className="border-b border-transparent pb-0.5 hover:border-amber-300"
-            href="https://github.com/"
+            href="https://github.com/schooldev49"
             target="_blank"
             rel="noreferrer"
           >
