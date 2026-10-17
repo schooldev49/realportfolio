@@ -1,5 +1,5 @@
-import profilePic from '../assets/optimized/root/profile.jpg'
-import sunset from '../assets/optimized/root/sunset.jpg'
+import profilePic from '../assets/PROFILEPIC.png'
+import sunset from '../assets/sunset.jpg'
 
 const Hero = () => {
   return (
