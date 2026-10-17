@@ -1,11 +1,11 @@
 import { useParams, Link } from 'react-router-dom'
-import { projects } from '../data/projects'
+import { projects, povImages } from '../data/projects'
 
-const labelClass = 'text-xs tracking-[0.25em] uppercase text-amber-300/80'
-const headingClass = 'text-2xl md:text-3xl font-semibold text-slate-50 mb-4'
+const labelClass = 'text-xs font-semibold tracking-[0.22em] uppercase text-amber-300/85'
+const headingClass = 'text-4xl md:text-5xl font-semibold tracking-[-0.04em] text-slate-50 mb-4'
 const bodyText = 'text-base md:text-lg text-slate-300 leading-relaxed'
 const cardClass =
-  'rounded-3xl border border-amber-50/15 bg-gradient-to-br from-white/10 via-slate-900/60 to-slate-950/80 p-8 shadow-[0_25px_60px_rgba(2,6,23,0.7)] backdrop-blur-md transition hover:-translate-y-1 md:p-10'
+  'rounded-2xl border border-white/10 bg-slate-900/70 p-8 shadow-[0_12px_30px_rgba(2,6,23,0.35)] transition hover:-translate-y-1 md:p-10'
 
 const ProjectDetail = () => {
   const { slug } = useParams()
@@ -13,7 +13,7 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 md:py-24">
+      <section className="bg-slate-950 py-16 md:py-24">
         <div className="mx-auto max-w-4xl px-6 text-center md:px-8">
           <div className={cardClass}>
             <p className={bodyText}>Project not found.</p>
@@ -27,7 +27,10 @@ const ProjectDetail = () => {
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 md:py-24">
+    <section
+      className="relative overflow-hidden bg-cover bg-center py-16 md:py-24"
+      style={{ backgroundImage: `linear-gradient(rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.98)), url(${povImages[4].src})` }}
+    >
       <div className="pointer-events-none absolute left-1/3 top-6 h-56 w-56 rounded-full bg-amber-200/10 blur-3xl" aria-hidden="true" />
       <div className="pointer-events-none absolute right-1/4 bottom-8 h-48 w-48 rounded-full bg-white/10 blur-3xl" aria-hidden="true" />
       <div className="relative mx-auto max-w-4xl px-6 md:px-8">
@@ -44,38 +47,26 @@ const ProjectDetail = () => {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl border border-amber-50/15">
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent" />
-            <img
-              src={project.heroImage}
-              alt={project.title}
-              className="w-full object-cover"
-            />
-          </div>
+          {project.images?.[0] && (
+            <div className="relative overflow-hidden rounded-2xl border border-amber-50/15">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--ink)]/45 to-transparent" />
+              <img src={project.images[0]} alt={project.title} className="w-full object-cover" />
+            </div>
+          )}
 
           <section>
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Overview</h2>
-            <p className={`mt-3 ${bodyText}`}>
-              This is where I share why the project mattered, who I was building with, and the weird constraints that
-              forced creative decisions. Expect shoutouts to labmates, mentors, and the notebooks full of scribbles that
-              got us unstuck.
-            </p>
+            <p className={`mt-3 ${bodyText}`}>{project.overview}</p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Approach</h2>
-            <p className={`mt-3 ${bodyText}`}>
-              I walk through the data wrangling, modeling choices, and lab validation loops—plus the little rituals
-              (sunrise runs, rubber-duck debugging) that helped the ideas click. This is the messy middle in detail.
-            </p>
+            <p className={`mt-3 ${bodyText}`}>{project.approach}</p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">Impact</h2>
-            <p className={`mt-3 ${bodyText}`}>
-              Here I wrap with the outcomes: what shipped, who used it, and how it changed our next steps. Sometimes
-              it&apos;s a live product; other times it&apos;s a better question—that honesty stays in the story.
-            </p>
+            <p className={`mt-3 ${bodyText}`}>{project.impact}</p>
           </section>
         </article>
       </div>

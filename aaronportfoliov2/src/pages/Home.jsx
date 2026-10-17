@@ -1,17 +1,14 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
-import { projects } from '../data/projects'
-import { posts } from '../data/posts'
+import { projects, povImages } from '../data/projects'
 
-const sectionLabel = 'text-xs tracking-[0.25em] uppercase text-amber-300/80'
-const sectionHeading = 'text-2xl md:text-3xl font-semibold text-slate-50 mb-4'
+const sectionHeading = 'text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-slate-50 mb-4'
 const bodyText = 'text-base md:text-lg text-slate-300 leading-relaxed'
 const cardClass =
-  'rounded-3xl border border-amber-50/15 bg-gradient-to-br from-white/10 via-slate-900/60 to-slate-950/80 p-6 shadow-[0_20px_45px_rgba(2,6,23,0.65)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:shadow-[0_30px_60px_rgba(2,6,23,0.75)]'
+  'rounded-2xl border border-white/10 bg-slate-900/70 p-6 shadow-[0_12px_30px_rgba(2,6,23,0.35)] transition duration-300 hover:-translate-y-1 hover:border-amber-200/30 hover:bg-slate-800/80'
 
 const Home = () => {
   const featuredProjects = projects.slice(0, 3)
-  const featuredPosts = posts.slice(0, 3)
 
   return (
     <div className="pb-24">
@@ -19,44 +16,53 @@ const Home = () => {
         <Hero />
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 md:py-24" id="about">
-        <div className="pointer-events-none absolute left-1/4 top-6 h-64 w-64 rounded-full bg-amber-300/15 blur-3xl" aria-hidden="true" />
-        <div className="pointer-events-none absolute right-1/5 bottom-4 h-48 w-48 rounded-full bg-pink-300/10 blur-3xl" aria-hidden="true" />
-        <div className="relative mx-auto max-w-6xl rounded-[2.5rem] border border-amber-50/10 bg-gradient-to-br from-white/10 via-slate-900/60 to-slate-950/80 px-6 py-12 shadow-[0_20px_45px_rgba(2,6,23,0.65)] backdrop-blur-md md:px-10">
-          <p className={sectionLabel}>About</p>
-          <h2 className={sectionHeading}>Turning research questions into tools</h2>
-          <p className={bodyText}>
-            I build systems at the intersection of computational biology, machine learning, and biotech product
-            teams. My current obsession is translating raw bench data into models and workflows that scientists
-            actually use—from therapeutic discovery pipelines to adaptive study tools for first-gen students. Outside
-            research, you&apos;ll probably find me running with friends, debugging something strange, or teaching
-            biology to students online.
+      <section
+        className="relative -mt-16 overflow-hidden bg-cover bg-center pb-20 pt-36 md:pb-32 md:pt-48"
+        id="about"
+        style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.62) 18%, rgba(15, 23, 42, 0.68) 82%, rgba(15, 23, 42, 0.98) 100%), url(${povImages[7].src})` }}
+      >
+        <div className="relative mx-auto max-w-6xl px-6 md:px-8">
+          <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">A little about me</h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-200 md:text-xl">
+            I'm an incoming student at the University of Chicago, where I plan to study molecular engineering on the Bioengineering track. I work on biology and software projects, usually with a notebook open and too many Chrome tabs.
+            I started with a love for coding back in middle school, making fun games like a platformer game in C++ <a href="https://jumpy-game.netlify.app" className="text-amber-300 hover:text-white">here</a>. In high school, I became interested in biology and started exploring how I could apply programming and machine learning to biological problems. especially in cancer immunology at <a href="https://isef.net/project/cbio050-xneocrypt-ranking-noncanonical-tumor-antigens" className="text-amber-300 hover:text-white">ISEF 2026</a>. I'm excited to continue exploring the intersection of biology and software in college, and to keep building useful tools for curious people.
           </p>
+          
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 md:py-24" id="featured-projects">
-        <div className="pointer-events-none absolute left-0 top-10 h-64 w-64 rounded-full bg-amber-400/10 blur-3xl" aria-hidden="true" />
-        <div className="pointer-events-none absolute right-0 bottom-0 h-56 w-56 rounded-full bg-rose-300/10 blur-3xl" aria-hidden="true" />
+      <section
+        className="relative overflow-hidden bg-cover bg-center py-16 md:py-24"
+        id="featured-projects"
+        style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.78) 16%, rgba(2, 6, 23, 0.9) 84%, rgba(2, 6, 23, 0.98) 100%), url(${povImages[3].src})` }}
+      >
         <div className="relative mx-auto max-w-6xl px-6 md:px-8">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
-              <p className={sectionLabel}>Featured Projects</p>
               <h2 className={sectionHeading}>Recent work</h2>
               <p className={bodyText}>
-                Experiments and build logs from days split between wet labs, Jupyter notebooks, and coffee-fueled
-                brainstorming with collaborators.
+                A few things I&apos;ve worked on recently.
               </p>
             </div>
-            <Link to="/projects" className="text-sm font-semibold text-amber-300 hover:text-slate-50">
-              See everything
+            <Link to="/projects" className="text-sm font-semibold text-amber-300 hover:text-white">
+              See all projects ↗
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
-              <Link key={project.slug} to={`/projects/${project.slug}`} className={cardClass}>
+              <article key={project.slug} className={cardClass}>
+                {project.images?.[0] && (
+                  <img
+                    src={project.images[0]}
+                    alt={project.title}
+                    className="mb-5 aspect-[16/9] w-full object-cover"
+                  />
+                )}
                 <h3 className="text-xl font-semibold text-slate-50">{project.title}</h3>
                 <p className="mt-3 text-sm text-slate-300">{project.shortDescription}</p>
+                <p className="mt-5 border-t border-white/10 pt-4 text-sm leading-relaxed text-amber-100/80">
+                  {project.impact}
+                </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span key={tag} className="rounded-full bg-amber-50/10 px-3 py-1 text-xs text-amber-200">
@@ -64,54 +70,21 @@ const Home = () => {
                     </span>
                   ))}
                 </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 md:py-24" id="featured-writing">
-        <div className="pointer-events-none absolute left-1/3 top-4 h-56 w-56 rounded-full bg-amber-200/10 blur-3xl" aria-hidden="true" />
-        <div className="pointer-events-none absolute right-1/4 bottom-8 h-48 w-48 rounded-full bg-white/10 blur-3xl" aria-hidden="true" />
-        <div className="relative mx-auto max-w-6xl px-6 md:px-8">
-          <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="max-w-2xl">
-              <p className={sectionLabel}>Featured Writing</p>
-              <h2 className={sectionHeading}>Notes from the field</h2>
-              <p className={bodyText}>
-                Quick essays from long runs, lab mishaps, and the teaching moments that make science feel human.
-              </p>
-            </div>
-            <Link to="/writing" className="text-sm font-semibold text-amber-300 hover:text-slate-50">
-              See everything
-            </Link>
-          </div>
-          <div className="space-y-6">
-            {featuredPosts.map((post) => (
-              <article key={post.slug} className={cardClass}>
-                <p className="text-sm text-slate-400">{new Date(post.date).toLocaleDateString()}</p>
-                <Link
-                  to={`/writing/${post.slug}`}
-                  className="mt-2 block text-xl font-semibold text-slate-50 hover:text-amber-200 md:text-2xl"
-                >
-                  {post.title}
-                </Link>
-                <p className={`${bodyText} mt-3 text-base md:text-lg`}>{post.summary}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 md:py-24" id="contact">
-        <div className="pointer-events-none absolute -left-6 top-8 h-64 w-64 rounded-full bg-amber-300/20 blur-3xl" aria-hidden="true" />
-        <div className="pointer-events-none absolute right-0 bottom-4 h-52 w-52 rounded-full bg-white/10 blur-3xl" aria-hidden="true" />
-        <div className="relative mx-auto max-w-6xl rounded-[2.5rem] border border-amber-50/15 bg-gradient-to-br from-amber-50/15 via-slate-900/60 to-slate-950/80 px-6 py-16 text-center shadow-[0_25px_60px_rgba(2,6,23,0.7)] backdrop-blur-lg md:px-10">
-          <p className={sectionLabel}>Contact</p>
-          <h2 className={sectionHeading}>Let&apos;s collaborate</h2>
-          <p className={bodyText}>
-            Email me or find me online. I love chatting about biotech, ML, and building tools for students—and I&apos;ll
-            probably reply with a run route or playlist recommendation.
+      <section
+        className="relative overflow-hidden bg-cover bg-center py-20 md:py-28"
+        id="contact"
+        style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.72) 18%, rgba(2, 6, 23, 0.82) 82%, rgba(2, 6, 23, 0.98) 100%), url(${povImages[9].src})` }}
+      >
+        <div className="relative mx-auto max-w-6xl px-6 py-4 text-center md:px-10">
+          <h2 className="mb-4 text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">Let&apos;s collaborate</h2>
+          <p className="mx-auto max-w-2xl text-base leading-relaxed text-slate-200 md:text-lg">
+            Want to talk about a project, research, or just say hi? Send me an email.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-base font-semibold text-amber-200">
             <a className="border-b border-transparent pb-0.5 hover:border-amber-300" href="mailto:ay.aaron.yu@gmail.com">

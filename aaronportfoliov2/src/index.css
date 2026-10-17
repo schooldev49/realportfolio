@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200..800&display=swap');
 @import "tailwindcss";
 
 :root {
-  font-family: 'Inter', 'Space Grotesk', ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+  --paper: #f7f3eb;
+  --paper-deep: #ede6d8;
+  --ink: #23343b;
+  --muted: #657176;
+  --coral: #e66d52;
+  --blue: #4d7898;
+  --sage: #b9cbb8;
   line-height: 1.6;
   font-weight: 400;
-  color: #f8fafc;
-  background-color: #020617;
+  color: var(--ink);
+  background-color: var(--paper);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,5 +27,12 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #020617;
+  background-color: var(--paper);
 }
+
+::selection {
+  background: #f4b19c;
+  color: var(--ink);
+}
+
+a { text-underline-offset: 0.2em; }
