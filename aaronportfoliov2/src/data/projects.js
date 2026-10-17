@@ -32,10 +32,13 @@ export const projects = [
     approach:
       'I recruited more than 50 PhD students and professors as judges, coordinated submissions from 14 schools, and built the judging systems that kept the event moving.',
     impact:
-      'The symposium supported 61 student researchers and grew into a statewide event with 172 participants.',
+      'The symposium supported 61 student researchers and grew into a statewide event with 172 participants. Now, I am leading the development of a national organization to spread this to other states.',
     tags: ['Community', 'Research', 'Leadership'],
     images: [njsrsOne, njsrsTwo, njsrsFive],
-    links: [{ label: 'NJSRS (old site)', url: 'https://njsrs.org/' }],
+    links: [
+      { label: 'NJSRS (old site)', url: 'https://njsrs.org/' },
+      { label: 'ASERS (new site)', url: 'https://asers.org/' }
+    ],
   },
   {
     slug: 'tumor-antigen-discovery-pipeline',
