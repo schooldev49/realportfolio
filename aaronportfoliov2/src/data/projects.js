@@ -1,4 +1,4 @@
-import labPlates from '../assets/pov/IMG_0043.jpeg'
+import labPlates from '../assets/pov/IMG_0043.jpeg' // 67
 import gel from '../assets/pov/IMG_0065.jpeg'
 import sunrise from '../assets/pov/IMG_0561.jpeg'
 import canyon from '../assets/pov/IMG_0727.jpeg'
