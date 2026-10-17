@@ -7,6 +7,7 @@ import Projects from './pages/Projects'
 import ProjectDetail from './pages/ProjectDetail'
 import Writing from './pages/Writing'
 import PostDetail from './pages/PostDetail'
+import SEO from './components/SEO'
 import './App.css'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-50">
+      <SEO />
       <Navbar />
       <main className="flex-1">
         <Routes>
