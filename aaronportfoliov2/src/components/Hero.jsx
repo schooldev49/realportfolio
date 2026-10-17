@@ -1,10 +1,10 @@
-import profilePic from '../assets/PROFILEPIC.png'
-import sunset from '../assets/sunset.jpg'
+import profilePic from '../assets/optimized/root/profile.jpg'
+import sunset from '../assets/optimized/root/sunset.jpg'
 
 const Hero = () => {
   return (
     <section
-      className="relative overflow-hidden bg-cover bg-center"
+      className="relative overflow-hidden bg-slate-900 bg-cover bg-center"
       style={{ backgroundImage: `url(${sunset})` }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/45 to-slate-950/15" />
@@ -33,6 +33,8 @@ const Hero = () => {
             <img
               src={profilePic}
               alt="Aaron portrait"
+              fetchPriority="high"
+              decoding="async"
               className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top transition duration-300 hover:scale-[1.02]"
             />
             <div className="flex items-center justify-between px-2 pb-1 pt-4 text-xs font-semibold tracking-[0.18em] text-white">

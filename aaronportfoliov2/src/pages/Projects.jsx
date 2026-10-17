@@ -9,7 +9,7 @@ const Projects = () => {
 
   return (
     <section
-      className="relative min-h-screen overflow-hidden bg-cover bg-center py-16 md:py-24"
+      className="relative min-h-screen overflow-hidden bg-slate-900 bg-cover bg-center py-16 md:py-24"
       style={{
         backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.96), rgba(2, 6, 23, 0.84) 42%, rgba(2, 6, 23, 0.98)), url(${povImages[0].src})`,
       }}
@@ -103,6 +103,7 @@ const Projects = () => {
                 <img
                   src={projectImages[activeImageIndex]}
                   alt={project.title}
+                  decoding="async"
                   className={`aspect-[16/8] w-full transition duration-700 ${
                     project.imageFits?.[activeImageIndex] === 'contain'
                       ? 'bg-white object-contain'

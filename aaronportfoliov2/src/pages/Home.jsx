@@ -17,7 +17,7 @@ const Home = () => {
       </section>
 
       <section
-        className="relative -mt-16 overflow-hidden bg-cover bg-center pb-20 pt-36 md:pb-32 md:pt-48"
+        className="relative -mt-16 overflow-hidden bg-slate-900 bg-cover bg-center pb-20 pt-36 md:pb-32 md:pt-48"
         id="about"
         style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.62) 18%, rgba(15, 23, 42, 0.68) 82%, rgba(15, 23, 42, 0.98) 100%), url(${povImages[7].src})` }}
       >
@@ -32,7 +32,7 @@ const Home = () => {
       </section>
 
       <section
-        className="relative overflow-hidden bg-cover bg-center py-16 md:py-24"
+        className="relative overflow-hidden bg-slate-900 bg-cover bg-center py-16 md:py-24"
         id="featured-projects"
         style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.78) 16%, rgba(2, 6, 23, 0.9) 84%, rgba(2, 6, 23, 0.98) 100%), url(${povImages[3].src})` }}
       >
@@ -55,6 +55,8 @@ const Home = () => {
                   <img
                     src={project.images[0]}
                     alt={project.title}
+                    loading="lazy"
+                    decoding="async"
                     className="mb-5 aspect-[16/9] w-full object-cover"
                   />
                 )}
@@ -77,7 +79,7 @@ const Home = () => {
       </section>
 
       <section
-        className="relative overflow-hidden bg-cover bg-center py-20 md:py-28"
+        className="relative overflow-hidden bg-slate-900 bg-cover bg-center py-20 md:py-28"
         id="contact"
         style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.72) 18%, rgba(2, 6, 23, 0.82) 82%, rgba(2, 6, 23, 0.98) 100%), url(${povImages[9].src})` }}
       >
