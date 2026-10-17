@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
+import DeferredBackground from '../components/DeferredBackground'
 import { projects, povImages } from '../data/projects'
 
 const sectionHeading = 'text-3xl md:text-4xl font-semibold tracking-[-0.03em] text-slate-50 mb-4'
@@ -12,14 +13,14 @@ const Home = () => {
 
   return (
     <div className="pb-24">
-      <section id="hero" className="pt-12">
+      <section id="hero">
         <Hero />
       </section>
 
-      <section
-        className="relative -mt-16 overflow-hidden bg-slate-900 bg-cover bg-center pb-20 pt-36 md:pb-32 md:pt-48"
+      <DeferredBackground
+        className="relative -mt-16 overflow-hidden bg-slate-950 bg-cover bg-center pb-20 pt-36 md:pb-32 md:pt-48"
         id="about"
-        style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.62) 18%, rgba(15, 23, 42, 0.68) 82%, rgba(15, 23, 42, 0.98) 100%), url(${povImages[7].src})` }}
+        backgroundImage={`linear-gradient(180deg, rgba(2, 6, 23, 1) 0%, rgba(2, 6, 23, 0.96) 18%, rgba(2, 6, 23, 0.68) 82%, rgba(2, 6, 23, 1) 100%), url(${povImages[7].src})`}
       >
         <div className="relative mx-auto max-w-6xl px-6 md:px-8">
           <h2 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-white md:text-6xl">A little about me</h2>
@@ -29,12 +30,12 @@ const Home = () => {
           </p>
           
         </div>
-      </section>
+      </DeferredBackground>
 
-      <section
+      <DeferredBackground
         className="relative overflow-hidden bg-slate-900 bg-cover bg-center py-16 md:py-24"
         id="featured-projects"
-        style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.78) 16%, rgba(2, 6, 23, 0.9) 84%, rgba(2, 6, 23, 0.98) 100%), url(${povImages[3].src})` }}
+        backgroundImage={`linear-gradient(180deg, rgba(2, 6, 23, 1) 0%, rgba(2, 6, 23, 0.78) 16%, rgba(2, 6, 23, 0.9) 84%, rgba(2, 6, 23, 1) 100%), url(${povImages[3].src})`}
       >
         <div className="relative mx-auto max-w-6xl px-6 md:px-8">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -76,12 +77,12 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </DeferredBackground>
 
-      <section
+      <DeferredBackground
         className="relative overflow-hidden bg-slate-900 bg-cover bg-center py-20 md:py-28"
         id="contact"
-        style={{ backgroundImage: `linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.72) 18%, rgba(2, 6, 23, 0.82) 82%, rgba(2, 6, 23, 0.98) 100%), url(${povImages[9].src})` }}
+        backgroundImage={`linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(2, 6, 23, 0.72) 18%, rgba(2, 6, 23, 0.82) 82%, rgba(2, 6, 23, 0.98) 100%), url(${povImages[9].src})`}
       >
         <div className="relative mx-auto max-w-6xl px-6 py-4 text-center md:px-10">
           <h2 className="mb-4 text-3xl font-semibold tracking-[-0.03em] text-white md:text-5xl">Let&apos;s collaborate</h2>
@@ -110,7 +111,7 @@ const Home = () => {
             </a>
           </div>
         </div>
-      </section>
+      </DeferredBackground>
     </div>
   )
 }

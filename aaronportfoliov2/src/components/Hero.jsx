@@ -8,7 +8,7 @@ const Hero = () => {
       style={{ backgroundImage: `url(${sunset})` }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/45 to-slate-950/15" />
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:py-24">
+      <div className="relative z-20 mx-auto grid max-w-6xl items-center gap-12 px-6 py-16 md:grid-cols-[1.05fr_0.95fr] md:px-8 md:py-24">
         <div>
             <h1 className="max-w-2xl text-5xl font-semibold leading-[0.98] tracking-[-0.04em] text-white md:text-7xl">
               Aaron Yu
@@ -43,8 +43,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-slate-950" />
-      <div className="mx-auto h-px max-w-6xl bg-white/25" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-b from-transparent via-slate-950/30 to-slate-950" />
     </section>
   )
 }
